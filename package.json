@@ -1,0 +1,41 @@
+{
+  "name": "asteroids",
+  "version": "1.0.0",
+  "description": "A ReactJS app that shows the information on asteroids closest to the earth, past and present, the data is being fetched from NASA's NEOW API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/index.html --open",
+    "format": "prettier --write \"src/**/*.{js,jsx,scss,css,html}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caleb335/asteroids.git"
+  },
+  "keywords": [
+    "Asteroids",
+    "space-app",
+    "data",
+    "space-data",
+    "earth's-danger"
+  ],
+  "author": "Caleb Olojo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Caleb335/asteroids/issues"
+  },
+  "homepage": "https://github.com/Caleb335/asteroids#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-reveal": "^1.2.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
+  }
+}
