@@ -28328,15 +28328,16 @@ var App = /*#__PURE__*/function (_React$Component) {
 
   var _super = _createSuper(App);
 
-  function App() {
+  function App(props) {
     var _this;
 
     _classCallCheck(this, App);
 
-    _this = _super.call(this);
+    _this = _super.call(this, props);
     _this.state = {
       asteroids: [],
-      isLoading: false
+      isLoading: false,
+      error: null
     };
     return _this;
   } // fetch data from NASA's NEoW API
@@ -28352,10 +28353,19 @@ var App = /*#__PURE__*/function (_React$Component) {
         isLoading: true
       });
       fetch(asetroid_endpoint).then(function (response) {
-        return response.json;
+        if (response.ok) {
+          return response.json();
+        }
+
+        throw new Error('Ooops , something went wrong!...');
       }).then(function (data) {
         return _this2.setState({
           asteroids: data.asteroids
+        });
+      }).catch(function (error) {
+        _this2.setState({
+          error: error,
+          isLoading: false
         });
       });
     }
@@ -28364,10 +28374,19 @@ var App = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this$state = this.state,
           asteroids = _this$state.asteroids,
-          isLoading = _this$state.isLoading; // perform react conditional rendering
+          isLoading = _this$state.isLoading,
+          error = _this$state.error; // perform react conditional rendering
       // by displaying either a loader or text indicating that data is being fetched
 
-      isLoading ? _react.default.createElement("p", null, "Loading...") : 'err';
+      if (isLoading) {
+        return _react.default.createElement("p", null, "Loading...");
+      } // error message
+
+
+      if (error) {
+        return _react.default.createElement("p", null, error.message);
+      }
+
       return _react.default.createElement("div", {
         className: "app__base asteroids"
       }, _react.default.createElement("h3", null, "Reveal your approaches Oh! ye asteroids \uD83E\uDD23 "), asteroids.map(function (asteroid) {
