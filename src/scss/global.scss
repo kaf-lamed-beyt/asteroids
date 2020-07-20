@@ -1,10 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
+:root {
+  --backgtround-primary: #040609;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background: var(--backgtround-primary);
 }
 
 .asteroids-base {
@@ -15,16 +23,38 @@
 }
 
 .asteroids-base > div {
-  margin: 10px;
+  margin: 20px;
 }
 
 .asteroids-info {
-  width: 265px;
+  width: 280px;
   height: 200px;
   background: #10699c;
   color: #fff;
+  padding: 22px;
+  border-radius: 4px;
 }
 
 .asteroids-info a {
   color: #fff;
+}
+
+@media only screen and (max-width: 576px) {
+  .asteroids-info {
+    width: 168px;
+    height: 120px;
+    font-size: 15px;
+  }
+
+  .asteroids-info h3 {
+    font-size: 12px;
+  }
+
+  .asteroids-base > div {
+    margin: 8px;
+  }
+
+  .asteroids-base {
+    margin: 10px;
+  }
 }
