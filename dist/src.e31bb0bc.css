@@ -5,5 +5,23 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif; }
 
+.asteroids-base {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 35px;
+  justify-content: center; }
+
+.asteroids-base > div {
+  margin: 10px; }
+
+.asteroids-info {
+  width: 265px;
+  height: 200px;
+  background: #10699c;
+  color: #fff; }
+
+.asteroids-info a {
+  color: #fff; }
+
 
 /*# sourceMappingURL=/src.e31bb0bc.css.map */

@@ -12,6 +12,7 @@ export default class App extends React.Component {
       error: null
     }
   }
+  
 
   // fetch data from NASA's NEoW API
   componentDidMount() {
@@ -23,13 +24,14 @@ export default class App extends React.Component {
     fetch(asetroid_endpoint)
       .then((response) => {
         if(response.ok) {
-          return(response.json())
+          return(response.json());
         } 
         throw new Error ('Ooops , something went wrong!...');
       })
       .then((data) =>
+        // console.log(data)
         this.setState({
-          asteroids: data.asteroids,
+          asteroids: data.near_earth_objects
         })
       ).catch(error => {
         this.setState({
@@ -43,9 +45,9 @@ export default class App extends React.Component {
 
     // perform react conditional rendering
     // by displaying either a loader or text indicating that data is being fetched
-    if(isLoading) {
-      return <p>Loading...</p>
-    } 
+    // if(isLoading) {
+    //   return <p>Loading ...</p>
+    // }    
 
     // error message
     if(error) {
@@ -54,14 +56,17 @@ export default class App extends React.Component {
     
     return (
       <div className='app__base asteroids'>
-        <h3>Reveal your approaches Oh! ye asteroids 🤣 </h3>
-        {asteroids.map(asteroid => {
-          return (
-            <div key={asteroid.ObjectID}>
-              <h2>{asteroid.name}</h2>
-            </div>
-          )
-        })}
+        <h1>Asteroids</h1>
+        <div className="asteroids-base">
+          {asteroids && asteroids.map(asteroid => {
+            return(
+              <div key={asteroid.id} className="asteroids-info">
+                <h3>{asteroid.name}</h3>
+                <a href={asteroid.nasa_jpl_url} target="__blank">NASA URL</a>
+              </div>
+            )
+          })}
+        </div>
       </div>
     )
   }

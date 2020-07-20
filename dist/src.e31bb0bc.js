@@ -28359,9 +28359,11 @@ var App = /*#__PURE__*/function (_React$Component) {
 
         throw new Error('Ooops , something went wrong!...');
       }).then(function (data) {
-        return _this2.setState({
-          asteroids: data.asteroids
-        });
+        return (// console.log(data)
+          _this2.setState({
+            asteroids: data.near_earth_objects
+          })
+        );
       }).catch(function (error) {
         _this2.setState({
           error: error,
@@ -28377,11 +28379,10 @@ var App = /*#__PURE__*/function (_React$Component) {
           isLoading = _this$state.isLoading,
           error = _this$state.error; // perform react conditional rendering
       // by displaying either a loader or text indicating that data is being fetched
-
-      if (isLoading) {
-        return _react.default.createElement("p", null, "Loading...");
-      } // error message
-
+      // if(isLoading) {
+      //   return <p>Loading ...</p>
+      // }    
+      // error message
 
       if (error) {
         return _react.default.createElement("p", null, error.message);
@@ -28389,11 +28390,17 @@ var App = /*#__PURE__*/function (_React$Component) {
 
       return _react.default.createElement("div", {
         className: "app__base asteroids"
-      }, _react.default.createElement("h3", null, "Reveal your approaches Oh! ye asteroids \uD83E\uDD23 "), asteroids.map(function (asteroid) {
+      }, _react.default.createElement("h1", null, "Asteroids"), _react.default.createElement("div", {
+        className: "asteroids-base"
+      }, asteroids && asteroids.map(function (asteroid) {
         return _react.default.createElement("div", {
-          key: asteroid.ObjectID
-        }, _react.default.createElement("h2", null, asteroid.name));
-      }));
+          key: asteroid.id,
+          className: "asteroids-info"
+        }, _react.default.createElement("h3", null, asteroid.name), _react.default.createElement("a", {
+          href: asteroid.nasa_jpl_url,
+          target: "__blank"
+        }, "NASA URL"));
+      })));
     }
   }]);
 
@@ -28515,7 +28522,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45383" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40047" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
