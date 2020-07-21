@@ -9,9 +9,9 @@ const Loader = styled.div`
     opacity: 0;
 
     .ball {
-        width: 30px;
-        height: 30px;
-        background: teal;
+        width: 16px;
+        height: 16px;
+        background: #11ECE5;
         border-radius: 50%;
         animation: oscillate .8s ease infinite; 
     }
@@ -29,7 +29,7 @@ const Loader = styled.div`
     }
      
     .balls > div {
-        margin: .3em .4em;
+        margin: .3em .8em;
     }
      
     @keyframes down {
