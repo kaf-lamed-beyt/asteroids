@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 :root {
-  --backgtround-primary: #040609;
+  --bg-primary: #040609;
+  --bg-sec: #392f5a;
+  --card-bg:  #11ECE5;
+  --sailor-blue: #00203FFF;
+  --mint: #ADEFD1FF;
 }
 
 * {
@@ -12,7 +16,22 @@
 }
 
 body {
-  background: var(--backgtround-primary);
+  background-image: url(../assets/space-shot.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body:hover {
+  background-image: url(../assets/launch-site.png);
+  transition: all ease 1s 2s;
+  background-blend-mode: multiply;
+}
+
+.app__base h1 {
+  color: #fff;
+  text-align: center;
+  padding: 15px;
 }
 
 .asteroids-base {
@@ -29,13 +48,26 @@ body {
 .asteroids-info {
   width: 280px;
   height: 200px;
-  background: #10699c;
+  border: 1px solid var(--mint);
   color: #fff;
   padding: 22px;
   border-radius: 4px;
 }
 
+.asteroids-info:hover {
+  background: var(--sailor-blue);
+  transform: rotate3d(1,1,0 -180deg);
+  transition: all 1s ease-in;
+  opacity: .8;
+  border: none;
+  cursor: pointer;
+}
+
 .asteroids-info a {
+  color: #fff;
+}
+
+.loader {
   color: #fff;
 }
 

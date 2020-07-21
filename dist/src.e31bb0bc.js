@@ -28353,21 +28353,16 @@ var App = /*#__PURE__*/function (_React$Component) {
         isLoading: true
       });
       fetch(asetroid_endpoint).then(function (response) {
-        if (response.ok) {
-          return response.json();
-        }
-
-        throw new Error('Ooops , something went wrong!...');
+        return response.json();
       }).then(function (data) {
-        return (// console.log(data)
-          _this2.setState({
-            asteroids: data.near_earth_objects
-          })
-        );
+        return _this2.setState({
+          asteroids: data.near_earth_objects,
+          isLoading: false
+        });
       }).catch(function (error) {
         _this2.setState({
           error: error,
-          isLoading: false
+          isLoading: true
         });
       });
     }
@@ -28376,16 +28371,11 @@ var App = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this$state = this.state,
           asteroids = _this$state.asteroids,
-          isLoading = _this$state.isLoading,
-          error = _this$state.error; // perform react conditional rendering
+          isLoading = _this$state.isLoading; // perform react conditional rendering
       // by displaying either a loader or text indicating that data is being fetched
-      // if(isLoading) {
-      //   return <p>Loading ...</p>
-      // }    
-      // error message
 
-      if (error) {
-        return _react.default.createElement("p", null, error.message);
+      if (isLoading) {
+        return _react.default.createElement("p", null, "Loading ...");
       }
 
       return _react.default.createElement("div", {
@@ -28480,7 +28470,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
+},{"./../assets/space-shot.jpg":[["space-shot.2634006e.jpg","assets/space-shot.jpg"],"assets/space-shot.jpg"],"./../assets/launch-site.png":[["launch-site.738b41e7.png","assets/launch-site.png"],"assets/launch-site.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -28522,7 +28512,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40047" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35619" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

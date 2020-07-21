@@ -22,36 +22,26 @@ export default class App extends React.Component {
     })
 
     fetch(asetroid_endpoint)
-      .then((response) => {
-        if(response.ok) {
-          return(response.json());
-        } 
-        throw new Error ('Ooops , something went wrong!...');
-      })
+      .then(response => response.json())
       .then((data) =>
-        // console.log(data)
         this.setState({
-          asteroids: data.near_earth_objects
+          asteroids: data.near_earth_objects,
+          isLoading: false
         })
       ).catch(error => {
-        this.setState({
-          error, isLoading: false
-        })
+          this.setState({
+            error, isLoading: true
+          })
       })
   }
 
   render() {
-    const { asteroids, isLoading, error } = this.state
+    const { asteroids, isLoading } = this.state
 
     // perform react conditional rendering
     // by displaying either a loader or text indicating that data is being fetched
-    // if(isLoading) {
-    //   return <p>Loading ...</p>
-    // }    
-
-    // error message
-    if(error) {
-      return <p>{error.message}</p>
+    if(isLoading) {
+      return <p>Loading ...</p>
     }
     
     return (
