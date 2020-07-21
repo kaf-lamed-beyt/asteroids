@@ -1,4 +1,5 @@
 import React from "react"
+import Loader from './loader'
 
 // API Endpoint && key
 const asteroid_key = "7UpN204mxX9ABjxG3j8quPfoLak8N2WGyZBaY741"
@@ -41,7 +42,9 @@ export default class App extends React.Component {
     // perform react conditional rendering
     // by displaying either a loader or text indicating that data is being fetched
     if(isLoading) {
-      return <p className="loader">Loading ...</p>
+      return (
+        <Loader />
+      )
     }
     
     return (
