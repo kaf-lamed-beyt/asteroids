@@ -41,7 +41,7 @@ export default class App extends React.Component {
     // perform react conditional rendering
     // by displaying either a loader or text indicating that data is being fetched
     if(isLoading) {
-      return <p>Loading ...</p>
+      return <p className="loader">Loading ...</p>
     }
     
     return (

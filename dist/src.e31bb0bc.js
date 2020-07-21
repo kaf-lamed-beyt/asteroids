@@ -28375,7 +28375,9 @@ var App = /*#__PURE__*/function (_React$Component) {
       // by displaying either a loader or text indicating that data is being fetched
 
       if (isLoading) {
-        return _react.default.createElement("p", null, "Loading ...");
+        return _react.default.createElement("p", {
+          className: "loader"
+        }, "Loading ...");
       }
 
       return _react.default.createElement("div", {
@@ -28512,7 +28514,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35619" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36753" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

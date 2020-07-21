@@ -20,12 +20,11 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-body:hover {
-  background-image: url(../assets/launch-site.png);
-  transition: all ease 1s;
-  background-blend-mode: multiply;
+  
+  &:hover {
+    background-image: url(../assets/launch-site.png);
+    transition: all ease 1s;
+  }
 }
 
 .app__base h1 {
@@ -52,15 +51,14 @@ body:hover {
   color: #fff;
   padding: 22px;
   border-radius: 4px;
-}
-
-.asteroids-info:hover {
-  background: var(--sailor-blue);
-  transform: rotate3d(1,1,0 -180deg);
-  transition: all 1s ease-in;
-  opacity: .8;
-  border: none;
-  cursor: pointer;
+  
+  &:hover {
+    background: var(--sailor-blue);
+    transition: all 1s ease-in;
+    opacity: .8;
+    border: none;
+    cursor: pointer;
+  }
 }
 
 .asteroids-info a {
