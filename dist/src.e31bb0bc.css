@@ -20,7 +20,7 @@ body {
 
 body:hover {
   background-image: url(/launch-site.738b41e7.png);
-  transition: all ease 1s 2s;
+  transition: all ease 1s;
   background-blend-mode: multiply; }
 
 .app__base h1 {
@@ -58,6 +58,17 @@ body:hover {
 
 .loader {
   color: #fff; }
+
+::-webkit-scrollbar {
+  height: 7px;
+  width: 6px; }
+
+::-webkit-scrollbar-track {
+  background: var(--sailor-blue); }
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-bg);
+  border-radius: 4px; }
 
 @media only screen and (max-width: 576px) {
   .asteroids-info {

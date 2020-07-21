@@ -24,7 +24,7 @@ body {
 
 body:hover {
   background-image: url(../assets/launch-site.png);
-  transition: all ease 1s 2s;
+  transition: all ease 1s;
   background-blend-mode: multiply;
 }
 
@@ -69,6 +69,21 @@ body:hover {
 
 .loader {
   color: #fff;
+}
+
+// scrollbar
+::-webkit-scrollbar {
+  height: 7px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sailor-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-bg);
+  border-radius: 4px;
 }
 
 @media only screen and (max-width: 576px) {
