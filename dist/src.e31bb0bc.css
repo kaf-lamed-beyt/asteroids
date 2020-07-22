@@ -38,7 +38,8 @@ body {
   padding: 22px;
   border-radius: 4px;
   animation: 2s fadeIn forwards;
-  opacity: 0; }
+  opacity: 0;
+  padding-bottom: -8%; }
   .asteroids-info:hover {
     background: var(--sailor-blue);
     transition: all 1s ease-in;
@@ -61,7 +62,7 @@ h3 {
   margin: 3%; }
 
 .btn {
-  margin-top: 10%;
+  margin-top: 6%;
   width: 120px;
   height: 35px;
   border: none;

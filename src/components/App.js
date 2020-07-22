@@ -60,7 +60,7 @@ export default class App extends React.Component {
                   <div className='estimated-diameters'>
                   <h3> Estimated Diameters</h3>
                   <div className="flex-diam">
-                  <div className='min'>
+                    <div className='min'>
                       <p>
                         Min Diameter:{" "}
                         {`${asteroid.estimated_diameter.kilometers.estimated_diameter_min.toFixed(
@@ -77,7 +77,7 @@ export default class App extends React.Component {
                       </p>
                     </div>
                   </div>
-                  </div>
+                </div>
                   <button className="nasa-url btn">
                   <a href={asteroid.nasa_jpl_url} target='__blank'>
                     NASA URL

@@ -46,6 +46,7 @@ body {
   border-radius: 4px;
   animation: 2s fadeIn forwards;
   opacity: 0;
+  padding-bottom: -8%;
 
   &:hover {
     background: var(--sailor-blue);
@@ -78,7 +79,7 @@ h3 {
 }
 
 .btn {
-  margin-top: 10%;
+  margin-top: 6%;
   width: 120px;
   height: 35px;
   border: none;
