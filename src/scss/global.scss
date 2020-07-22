@@ -50,22 +50,21 @@ body {
 
   &:hover {
     background: var(--sailor-blue);
-    transition:  all 1s ease-in;
+    transition: all 1s ease-in;
     color: #fff;
     cursor: pointer;
   }
 
   &:hover a {
     color: #000;
-    transition: all 1s ease-in;
+    transition: all .6s ease-in;
   }
 
   &:hover button {
     background: var(--card-bg);
-    transition: all 1s ease-in;
+    transition: all .6s ease-in;
   }
 }
-
 
 .asteroids-info a {
   color: #fff;
@@ -79,7 +78,7 @@ h3 {
 }
 
 .btn {
-  margin-top: 6%;
+  margin-top: 7%;
   width: 120px;
   height: 35px;
   border: none;
@@ -94,18 +93,22 @@ h3 {
   padding: 5px;
 }
 
-// keyframes 
+// keyframes
 @keyframes fadeIn {
   0% {
-      opacity: 0;
-  } 25% {
-      opacity: .4;
-  } 50% {
-      opacity: .6;
-  } 75% {
-      opacity: .8;
-  } 100% {
-      opacity: 1;
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

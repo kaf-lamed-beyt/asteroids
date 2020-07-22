@@ -47,10 +47,10 @@ body {
     cursor: pointer; }
   .asteroids-info:hover a {
     color: #000;
-    transition: all 1s ease-in; }
+    transition: all .6s ease-in; }
   .asteroids-info:hover button {
     background: var(--card-bg);
-    transition: all 1s ease-in; }
+    transition: all .6s ease-in; }
 
 .asteroids-info a {
   color: #fff;
@@ -62,7 +62,7 @@ h3 {
   margin: 3%; }
 
 .btn {
-  margin-top: 6%;
+  margin-top: 7%;
   width: 120px;
   height: 35px;
   border: none;
@@ -79,11 +79,11 @@ h3 {
   0% {
     opacity: 0; }
   25% {
-    opacity: .4; }
+    opacity: 0.4; }
   50% {
-    opacity: .6; }
+    opacity: 0.6; }
   75% {
-    opacity: .8; }
+    opacity: 0.8; }
   100% {
     opacity: 1; } }
 

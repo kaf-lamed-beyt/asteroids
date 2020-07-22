@@ -54,34 +54,38 @@ export default class App extends React.Component {
           {asteroids &&
             asteroids.map((asteroid) => {
               return (
-                <div key={asteroid.id} className='asteroids-info' data-aos="zoom-in">
+                <div
+                  key={asteroid.id}
+                  className='asteroids-info'
+                  data-aos='zoom-in'
+                >
                   <h3>Name: {asteroid.name}</h3>
                   <p>Absolute Magnitude: {asteroid.absolute_magnitude_h}</p>
                   <div className='estimated-diameters'>
-                  <h3> Estimated Diameters</h3>
-                  <div className="flex-diam">
-                    <div className='min'>
-                      <p>
-                        Min Diameter:{" "}
-                        {`${asteroid.estimated_diameter.kilometers.estimated_diameter_min.toFixed(
-                          2
-                        )}Km`}
-                      </p>
-                    </div>
-                    <div className='max'>
-                      <p>
-                        Max Diameter:{" "}
-                        {`${asteroid.estimated_diameter.kilometers.estimated_diameter_max.toFixed(
-                          2
-                        )}Km`}
-                      </p>
+                    <h3> Estimated Diameters</h3>
+                    <div className='flex-diam'>
+                      <div className='min'>
+                        <p>
+                          Min Diameter:{" "}
+                          {`${asteroid.estimated_diameter.kilometers.estimated_diameter_min.toFixed(
+                            2
+                          )}Km`}
+                        </p>
+                      </div>
+                      <div className='max'>
+                        <p>
+                          Max Diameter:{" "}
+                          {`${asteroid.estimated_diameter.kilometers.estimated_diameter_max.toFixed(
+                            2
+                          )}Km`}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                  <button className="nasa-url btn">
-                  <a href={asteroid.nasa_jpl_url} target='__blank'>
-                    NASA URL
-                  </a>
+                  <button className='nasa-url btn'>
+                    <a href={asteroid.nasa_jpl_url} target='__blank'>
+                      NASA URL
+                    </a>
                   </button>
                 </div>
               )
