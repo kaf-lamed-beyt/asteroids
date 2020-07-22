@@ -3,9 +3,9 @@
 :root {
   --bg-primary: #040609;
   --bg-sec: #392f5a;
-  --card-bg:  #11ECE5;
-  --sailor-blue: #00203FFF;
-  --mint: #ADEFD1FF;
+  --card-bg: #11ece5;
+  --sailor-blue: #00203fff;
+  --mint: #adefd1ff;
 }
 
 * {
@@ -16,19 +16,11 @@
 }
 
 body {
-  background-image: url(../assets/space-shot.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  
-  &:hover {
-    background-image: url(../assets/launch-site.png);
-    transition: all ease 1s;
-  }
+  background: ghostwhite;
 }
 
 .app__base h1 {
-  color: #fff;
+  color: #000;
   text-align: center;
   padding: 15px;
 }
@@ -45,28 +37,33 @@ body {
 }
 
 .asteroids-info {
-  width: 280px;
+  width: 330px;
   height: 200px;
-  border: 1px solid var(--mint);
-  color: #fff;
+  background: #fff;
+  box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.05);
+  color: rgb(32, 32, 32);
   padding: 22px;
   border-radius: 4px;
-  
+
   &:hover {
     background: var(--sailor-blue);
     transition: all 1s ease-in;
-    opacity: .8;
+    opacity: 0.8;
+    color: #fff;
     border: none;
     cursor: pointer;
+    box-shadow: 0 4px 6px 8px rgba(0, 0, 0, 0.05);
+  } &:hover a{
+    color: #fff;
   }
 }
 
 .asteroids-info a {
-  color: #fff;
+  color: #000;
 }
 
-.loader {
-  color: #fff;
+.asteroids-info a, p, h3 {
+  margin: 6%;
 }
 
 // scrollbar
@@ -86,8 +83,6 @@ body {
 
 @media only screen and (max-width: 576px) {
   .asteroids-info {
-    width: 168px;
-    height: 120px;
     font-size: 15px;
   }
 

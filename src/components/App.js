@@ -1,5 +1,5 @@
 import React from "react"
-import Loader from './loader'
+import Loader from "./loader"
 
 // API Endpoint && key
 const asteroid_key = "7UpN204mxX9ABjxG3j8quPfoLak8N2WGyZBaY741"
@@ -10,29 +10,31 @@ export default class App extends React.Component {
     this.state = {
       asteroids: [],
       isLoading: false,
-      error: null
+      error: null,
     }
   }
-  
 
   // fetch data from NASA's NEoW API
   componentDidMount() {
     // get loading key
     this.setState({
-      isLoading: true
+      isLoading: true,
     })
 
     fetch(asetroid_endpoint)
-      .then(response => response.json())
-      .then((data) =>
+      .then((response) => response.json())
+      .then((data) => 
+        // console.log(data.near_earth_objects)
         this.setState({
           asteroids: data.near_earth_objects,
           isLoading: false
         })
-      ).catch(error => {
-          this.setState({
-            error, isLoading: true
-          })
+      )
+      .catch((error) => {
+        this.setState({
+          error,
+          isLoading: true,
+        })
       })
   }
 
@@ -41,24 +43,26 @@ export default class App extends React.Component {
 
     // perform react conditional rendering
     // by displaying either a loader or text indicating that data is being fetched
-    if(isLoading) {
-      return (
-        <Loader />
-      )
+    if (isLoading) {
+      return <Loader />
     }
     
     return (
       <div className='app__base asteroids'>
         <h1>Asteroids</h1>
-        <div className="asteroids-base">
-          {asteroids && asteroids.map(asteroid => {
-            return(
-              <div key={asteroid.id} className="asteroids-info">
-                <h3>{asteroid.name}</h3>
-                <a href={asteroid.nasa_jpl_url} target="__blank">NASA URL</a>
-              </div>
-            )
-          })}
+        <div className='asteroids-base'>
+          {asteroids &&
+            asteroids.map((asteroid) => {
+              return (
+                <div key={asteroid.id} className='asteroids-info'>
+                  <h3>Name: {asteroid.name}</h3>
+                  <p>Absolute Magnitude: {asteroid.absolute_magnitude_h}</p>
+                  <a href={asteroid.nasa_jpl_url} target='__blank'>
+                    NASA URL
+                  </a>
+                </div>
+              )
+            })}
         </div>
       </div>
     )
