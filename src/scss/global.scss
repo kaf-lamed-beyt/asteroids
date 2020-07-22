@@ -50,18 +50,19 @@ body {
 
   &:hover {
     background: var(--sailor-blue);
-    transition: all 1s ease-in;
-    opacity: 0.8;
+    transition:  1s ease-in;
     color: #fff;
-    border: none;
     cursor: pointer;
-    box-shadow: 0 4px 6px 8px rgba(0, 0, 0, 0.05);
   }
+
   &:hover a {
     color: #fff;
+    transition: all 1s ease-in;
   }
+
   &:hover button {
     background: var(--card-bg);
+    transition: all 1s ease-in;
   }
 }
 

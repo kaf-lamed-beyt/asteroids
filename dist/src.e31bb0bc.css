@@ -41,16 +41,15 @@ body {
   opacity: 0; }
   .asteroids-info:hover {
     background: var(--sailor-blue);
-    transition: all 1s ease-in;
-    opacity: 0.8;
+    transition: 1s ease-in;
     color: #fff;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 6px 8px rgba(0, 0, 0, 0.05); }
+    cursor: pointer; }
   .asteroids-info:hover a {
-    color: #fff; }
+    color: #fff;
+    transition: all 1s ease-in; }
   .asteroids-info:hover button {
-    background: var(--card-bg); }
+    background: var(--card-bg);
+    transition: all 1s ease-in; }
 
 .asteroids-info a {
   color: #fff;
