@@ -22,14 +22,12 @@ const Loader = styled.div`
      
     .one {
         animation-delay: .2s;
+        margin-left: 6px;
     }
      
     .two {
          animation-delay: .3s;
-    }
-     
-    .balls > div {
-        margin: .3em .8em;
+         margin-left: 6px;
     }
      
     @keyframes down {
@@ -37,7 +35,7 @@ const Loader = styled.div`
             transform: translateY(-100px);
             opacity: .4;
         } 100% {
-            transform: translateY(0);
+            transform: translateY(350px);
             opacity: 1;
         }
     }
@@ -45,10 +43,13 @@ const Loader = styled.div`
     @keyframes oscillate {
         0% {
             transform: translateY(0px);
+            opacity: .3;
         } 50% {
             transform: translateY(15px);
+            opacity: .6;
         } 100% {
             transform: translateY(0px);
+            opacity: 1;
         }
     }
      
