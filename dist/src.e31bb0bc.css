@@ -31,12 +31,14 @@ body {
 
 .asteroids-info {
   width: 330px;
-  height: 200px;
+  height: 280px;
   background: #fff;
   box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.05);
   color: #202020;
   padding: 22px;
-  border-radius: 4px; }
+  border-radius: 4px;
+  animation: 2s fadeIn forwards;
+  opacity: 0; }
   .asteroids-info:hover {
     background: var(--sailor-blue);
     transition: all 1s ease-in;
@@ -47,12 +49,43 @@ body {
     box-shadow: 0 4px 6px 8px rgba(0, 0, 0, 0.05); }
   .asteroids-info:hover a {
     color: #fff; }
+  .asteroids-info:hover button {
+    background: var(--card-bg); }
 
 .asteroids-info a {
-  color: #000; }
+  color: #fff;
+  text-decoration: none; }
 
-.asteroids-info a, p, h3 {
-  margin: 6%; }
+.asteroids-info a,
+p,
+h3 {
+  margin: 3%; }
+
+.btn {
+  margin-top: 10%;
+  width: 120px;
+  height: 35px;
+  border: none;
+  background: var(--sailor-blue);
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none; }
+
+.flex-diam {
+  display: flex;
+  padding: 5px; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: .4; }
+  50% {
+    opacity: .6; }
+  75% {
+    opacity: .8; }
+  100% {
+    opacity: 1; } }
 
 ::-webkit-scrollbar {
   height: 7px;

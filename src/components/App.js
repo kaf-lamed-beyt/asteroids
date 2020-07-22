@@ -23,11 +23,11 @@ export default class App extends React.Component {
 
     fetch(asetroid_endpoint)
       .then((response) => response.json())
-      .then((data) => 
-        // console.log(data.near_earth_objects)
+      .then((data) =>
+        //console.log(data.near_earth_objects)
         this.setState({
           asteroids: data.near_earth_objects,
-          isLoading: false
+          isLoading: false,
         })
       )
       .catch((error) => {
@@ -46,7 +46,7 @@ export default class App extends React.Component {
     if (isLoading) {
       return <Loader />
     }
-    
+
     return (
       <div className='app__base asteroids'>
         <h1>Asteroids</h1>
@@ -57,9 +57,32 @@ export default class App extends React.Component {
                 <div key={asteroid.id} className='asteroids-info'>
                   <h3>Name: {asteroid.name}</h3>
                   <p>Absolute Magnitude: {asteroid.absolute_magnitude_h}</p>
+                  <div className='estimated-diameters'>
+                  <h3> Estimated Diameters</h3>
+                  <div className="flex-diam">
+                  <div className='min'>
+                      <p>
+                        Min Diameter:{" "}
+                        {`${asteroid.estimated_diameter.kilometers.estimated_diameter_min.toFixed(
+                          2
+                        )}Km`}
+                      </p>
+                    </div>
+                    <div className='max'>
+                      <p>
+                        Max Diameter:{" "}
+                        {`${asteroid.estimated_diameter.kilometers.estimated_diameter_max.toFixed(
+                          2
+                        )}Km`}
+                      </p>
+                    </div>
+                  </div>
+                  </div>
+                  <button className="nasa-url btn">
                   <a href={asteroid.nasa_jpl_url} target='__blank'>
                     NASA URL
                   </a>
+                  </button>
                 </div>
               )
             })}

@@ -11,7 +11,7 @@ const Loader = styled.div`
   .ball {
     width: 16px;
     height: 16px;
-    background: #11ece5;
+    background: #00203fff;
     border-radius: 50%;
     animation: oscillate 0.8s ease infinite;
   }
