@@ -31685,7 +31685,8 @@ var App = /*#__PURE__*/function (_React$Component) {
       }, asteroids && asteroids.map(function (asteroid) {
         return _react.default.createElement("div", {
           key: asteroid.id,
-          className: "asteroids-info"
+          className: "asteroids-info",
+          "data-aos": "zoom-in"
         }, _react.default.createElement("h3", null, "Name: ", asteroid.name), _react.default.createElement("p", null, "Absolute Magnitude: ", asteroid.absolute_magnitude_h), _react.default.createElement("div", {
           className: "estimated-diameters"
         }, _react.default.createElement("h3", null, " Estimated Diameters"), _react.default.createElement("div", {

@@ -54,7 +54,7 @@ export default class App extends React.Component {
           {asteroids &&
             asteroids.map((asteroid) => {
               return (
-                <div key={asteroid.id} className='asteroids-info'>
+                <div key={asteroid.id} className='asteroids-info' data-aos="zoom-in">
                   <h3>Name: {asteroid.name}</h3>
                   <p>Absolute Magnitude: {asteroid.absolute_magnitude_h}</p>
                   <div className='estimated-diameters'>
